@@ -6,13 +6,14 @@ const app = express();
 const axios = require('axios')
 const port = process.env.PORT || 3000;
 const config = require('./config');
-
+const cors = require('cors');
 //app.use(bodyParser.urlencoded({ extended: false }))
 
 // parse application/json
 //app.use(bodyParser.json())
 
 app.use(morgan('dev'));
+app.use(cors())
 app.use(express.static(path.join(__dirname, 'public')));
 
 const [commentsRoute, projectsRoute, pledgesRoute, relatedRoute] = [
