@@ -19,7 +19,7 @@ class App extends Component {
     render() {
         return (
             <div>
-                <Project id={this.state.id} />
+                {/* <Project id={this.state.id} /> */}
                 {/* <Pledge id={this.state.id} /> */}
                 {/* <Comments id={this.state.id} /> */}
                 <Related
