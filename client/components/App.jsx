@@ -96,7 +96,7 @@ class App extends Component {
         return (
 
             <div style={wrapperStyle}>
-                {/* <Project id={this.state.id} /> */}
+                <Project id={this.state.id} />
                 <Pledge id={this.state.id} style={relatedStyle} />
                 {/* <Comments id={this.state.id} /> */}
                 <Related
