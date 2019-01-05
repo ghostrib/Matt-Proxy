@@ -1,16 +1,16 @@
 const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
-//const bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
 const app = express();
 const axios = require('axios')
 //const port = process.env.PORT || 3000;
 const config = require('./config');
 const cors = require('cors');
-//app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: true }))
 
 // parse application/json
-//app.use(bodyParser.json())
+app.use(bodyParser.json())
 
 app.use(morgan('dev'));
 app.use(cors())
@@ -50,7 +50,7 @@ app.post('/comments', (req, res) => {
 
 // Projects
 
-app.get('/projects:id', (req, res) => {
+app.get('/projects/:id', (req, res) => {
   axios.get(`${projectsRoute}/projects/${req.params.id}`, { params: req.query })
     .then(response => {
       res.status(200).send(response.data);
@@ -73,7 +73,7 @@ app.get('/pledges/:id', (req, res) => {
     })
     .catch(error => {
       console.log('error getting pledges from proxy server')
-      res.sendStatus(500); ß
+      res.sendStatus(500);
     })
 })
 
