@@ -4,7 +4,7 @@ const path = require('path');
 //const bodyParser = require('body-parser');
 const app = express();
 const axios = require('axios')
-const port = process.env.PORT || 3000;
+//const port = process.env.PORT || 3000;
 const config = require('./config');
 const cors = require('cors');
 //app.use(bodyParser.urlencoded({ extended: false }))
@@ -65,8 +65,8 @@ app.get('/projects:id', (req, res) => {
 
 app.get('/pledges', (req, res) => {
   axios.get(`${pledgesRoute}/pledges/${req.params.id}`, { params: req.query })
-  //app.get('/pledges/:id', (req, res) => {
-  axios.get('http://localhost:3003/pledges/' + req.params.id)
+    //app.get('/pledges/:id', (req, res) => {
+    //axios.get('http://localhost:3003/pledges/' + req.params.id)
     .then(response => {
       res.status(200).send(response.data);
 
@@ -92,10 +92,6 @@ app.post('/pledges', (req, res) => {
 
 app.get('/related', (req, res) => {
   axios.get(`${relatedRoute}/related/${req.params.id}`, { params: req.query })
-  //console.log('req.params.id', req.params.id)
-  axios.get('http://localhost:3004/related/2') // + req.params.id)
-
-    //axios.get('http://localhost:3004/related', { params: req.query })
     .then(response => {
       res.status(200).send(response.data);
     })
@@ -105,6 +101,6 @@ app.get('/related', (req, res) => {
     })
 })
 
-app.listen(port, () => {
-  console.log('server running on port ' + port)
+app.listen(config.PORT, () => {
+  console.log('server running on port ' + config.PORT)
 })

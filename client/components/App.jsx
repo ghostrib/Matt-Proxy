@@ -20,8 +20,8 @@ class App extends Component {
         return (
             <div>
                 <Project id={this.state.id} />
-                <Pledge id={this.state.id} />
-                <Comments id={this.state.id} />
+                {/* <Pledge id={this.state.id} /> */}
+                {/* <Comments id={this.state.id} /> */}
                 <Related
                     onClick={this.handleClick}
                     id={this.state.id}
