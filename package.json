@@ -5,26 +5,21 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon ./server.js",
-<<<<<<< HEAD
     "restart": "pm2 startOrRestart ecosystem.config.js",
-    "deploy": "pm2 deploy ecosystem.config.js production"
-=======
+    "deploy": "pm2 deploy ecosystem.config.js production",
     "build": "webpack -d -w"
->>>>>>> 36a5add29600d34f6b64673ac1ab36a99c3ace0c
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",
-<<<<<<< HEAD
     "dotenv": "^6.2.0",
     "express": "^4.16.2",
     "morgan": "^1.9.0"
   },
   "devDependencies": {
-    "pm2": "^3.2.4"
-=======
+    "pm2": "^3.2.4",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
@@ -40,6 +35,5 @@
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "webpack": "^3.11.0"
->>>>>>> 36a5add29600d34f6b64673ac1ab36a99c3ace0c
   }
 }

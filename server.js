@@ -25,7 +25,8 @@ const [commentsRoute, projectsRoute, pledgesRoute, relatedRoute] = [
 // Comments
 
 app.get('/comments/:id', (req, res) => {
-  axios.get(`${commentsRoute}/comments/${req.params.id}`, { params: req.query })
+  axios.get('http://localhost:3001' + req.url)
+    //axios.get(`${commentsRoute}/comments/${req.params.id}`, { params: req.query })
     .then(response => {
       res.status(200).send(response.data);
     })
@@ -59,15 +60,12 @@ app.get('/projects:id', (req, res) => {
     })
 })
 
-<<<<<<< HEAD
 // Pledges
 
 app.get('/pledges', (req, res) => {
   axios.get(`${pledgesRoute}/pledges/${req.params.id}`, { params: req.query })
-=======
-app.get('/pledges/:id', (req, res) => {
+  //app.get('/pledges/:id', (req, res) => {
   axios.get('http://localhost:3003/pledges/' + req.params.id)
->>>>>>> 36a5add29600d34f6b64673ac1ab36a99c3ace0c
     .then(response => {
       res.status(200).send(response.data);
 
@@ -92,14 +90,11 @@ app.post('/pledges', (req, res) => {
 // Related
 
 app.get('/related', (req, res) => {
-<<<<<<< HEAD
   axios.get(`${relatedRoute}/related/${req.params.id}`, { params: req.query })
-=======
   //console.log('req.params.id', req.params.id)
   axios.get('http://localhost:3004/related/2') // + req.params.id)
 
     //axios.get('http://localhost:3004/related', { params: req.query })
->>>>>>> 36a5add29600d34f6b64673ac1ab36a99c3ace0c
     .then(response => {
       res.status(200).send(response.data);
     })
@@ -110,5 +105,5 @@ app.get('/related', (req, res) => {
 })
 
 app.listen(port, () => {
-  console.log(`server running at: http://localhost:${port}`);
-});
+  console.log('server running on port ' + port)
+})
