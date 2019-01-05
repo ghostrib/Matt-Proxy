@@ -63,7 +63,7 @@ app.get('/projects:id', (req, res) => {
 
 // Pledges
 
-app.get('/pledges', (req, res) => {
+app.get('/pledges/:id', (req, res) => {
   axios.get(`${pledgesRoute}/pledges/${req.params.id}`, { params: req.query })
     //app.get('/pledges/:id', (req, res) => {
     //axios.get('http://localhost:3003/pledges/' + req.params.id)
@@ -73,7 +73,7 @@ app.get('/pledges', (req, res) => {
     })
     .catch(error => {
       console.log('error getting pledges from proxy server')
-      res.sendStatus(500);
+      res.sendStatus(500); ß
     })
 })
 
