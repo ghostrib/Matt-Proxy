@@ -17,8 +17,8 @@
     "dotenv": "^6.2.0",
     "express": "^4.16.2",
     "morgan": "^1.9.0",
-    "react-bootstrap": "^0.32.4",
-    "react-css-grid": "^2.0.0-0"
+    "radium": "^0.18.4",
+    "react-bootstrap": "^0.32.4"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -34,8 +34,9 @@
     "morgan": "^1.9.0",
     "path": "^0.12.7",
     "pm2": "^3.2.4",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
-    "webpack": "^3.11.0"
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "webpack": "^3.11.0",
+    "webpack-cli": "^3.2.0"
   }
 }
