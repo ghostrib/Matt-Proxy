@@ -110,7 +110,7 @@ class App extends Component {
 
                     <Related onClick={this.handleClick} id={this.state.id} />
 
-                    <Comments id={this.state.id} />
+                    {/* <Comments id={this.state.id} /> */}
 
                 </Grid>
 
