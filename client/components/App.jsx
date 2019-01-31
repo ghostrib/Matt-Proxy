@@ -1,80 +1,79 @@
 import React, { Component } from 'react';
-import Grid from 'react-css-grid';
+//import Grid from '@material-ui/core/Grid';
+import { Grid, Row, Col } from 'react-bootstrap'
 
-// .grid-container {
-//     display: grid;
-//     grid-template-columns: auto auto auto;
-//     background-color: #2196F3;
-//     padding: 10px;
-//   }
-//   .grid-item {
-//     background-color: rgba(255, 255, 255, 0.8);
-//     border: 1px solid rgba(0, 0, 0, 0.8);
-//     padding: 20px;
-//     font-size: 30px;
-//     text-align: center;
-//   }
-
-// const containerStyle = {
-//     display: 'grid',
-//     // gridTemplateColumns: 'auto auto auto',
-//     gridGap: '50px 100px',
-//     backgroundColor: 'white',
-//     padding: '10px'
-// }
-
-// const itemStyle = {
-//     backgroundColor: 'rgba(255, 255, 255, 0.8)',
-//     border: '1px solid rgba(0, 0, 0, 0.8)',
-//     padding: '20px',
-//     fontSize: '30px',
-//     textAlign: 'center',
-//     gridColumnGap: '10px'
-// }
 
 const wrapperStyle = {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(3, 1fr)',
-    gridGap: '10px',
-    gridAutoRows: 'minmax(100px, auto)'
+    // display: 'grid',
+    // maxWidth: '100%',
+    // margin: '0 auto',
+    // gridTemplateColumns: 'repeat(3, 1fr)',
+    // gridGap: '10px',
+    // gridAutoRows: 'minmax(100px, auto)'
+}
+
+
+
+const projectStyle = {
+    // border: '2px solid rgb(233,171,88)',
+    // borderRadius: '5px',
+    // backgroundColor: 'rgba(233,171,88,.5)',
+    // padding: '1em',
+    // color: '#d9480f',
+    // gridColumn: '1 / 3',
+    // gridRow: '1 / 4'
 }
 
 const pledgeStyle = {
-    gridColumn: '1 / 3',
-    gridRow: '2 / 5'
+    // border: '2px solid rgb(233,171,88)',
+    // borderRadius: '5px',
+    // backgroundColor: 'rgba(233,171,88,.5)',
+    // padding: '1em',
+    // color: '#d9480f',
+    // gridColumn: '1 / 4',
+    // gridRow: '1 / 4'
+}
+
+const commentStyle = {
+    // border: '2px solid rgb(233,171,88)',
+    // borderRadius: '5px',
+    // backgroundColor: 'rgba(233,171,88,.5)',
+    // padding: '1em',
+    // color: '#d9480f',
+    // gridColumn: '1 / 3',
+    // gridRow: '4 / 6'
 }
 
 const relatedStyle = {
-    gridColumn: '2 / 4',
-    gridRow: '1 / 3'
+    // border: '2px solid rgb(233,171,88)',
+    // borderRadius: '5px',
+    // backgroundColor: 'rgba(233,171,88,.5)',
+    // padding: '1em',
+    // color: '#d9480f',
+    // gridColumn: '3',
+    // gridRow: '4 / 6'
 }
 
-//   .one {
-//     grid - column: 1 / 3;
-//     grid - row: 1;
-// }
-//   .two {
-//     grid - column: 2 / 4;
-//     grid - row: 1 / 3;
-// }
-//   .three {
-//     grid - column: 1;
-//     grid - row: 2 / 5;
-// }
-//   .four {
-//     grid - column: 3;
-//     grid - row: 3;
-// }
-//   .five {
-//     grid - column: 2;
-//     grid - row: 4;
-// }
-//   .six {
-//     grid - column: 3;
-//     grid - row: 4;
-// }
 
 
+// const App = () => {
+//     return (
+//         <Grid>
+//             <Cell>
+//                 <p>Lorem</p>
+//             </Cell>
+//             <Cell>
+//                 <p>ipsum</p>
+//             </Cell>
+//             <Cell>
+//                 <p>dolor</p>
+//             </Cell>
+//             <Cell>
+//                 <p>sit</p>
+//             </Cell>
+//         </Grid>
+//     );
+// }
 
 class App extends Component {
     constructor(props) {
@@ -94,16 +93,28 @@ class App extends Component {
 
     render() {
         return (
+            <div>
+                <Grid>
+                    <Row>
+                        <Project className='project' id={this.state.id} />
 
-            <div style={wrapperStyle}>
-                <Project id={this.state.id} />
-                <Pledge id={this.state.id} style={relatedStyle} />
-                {/* <Comments id={this.state.id} /> */}
-                <Related
-                    onClick={this.handleClick}
-                    id={this.state.id}
-                    style={pledgeStyle}
-                />
+                    </Row>
+
+                    <Row md={4} xs={3} lg={2}>
+                        <Pledge className='pledge' id={this.state.id} />
+
+                    </Row>
+
+
+
+                    <Related onClick={this.handleClick} id={this.state.id} />
+
+                    <Comments id={this.state.id} />
+
+                </Grid>
+
+
+
             </div>
 
         )
